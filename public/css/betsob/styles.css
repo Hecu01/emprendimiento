@@ -18,7 +18,84 @@
 #fileico{
   border-radius: 100%;  
 }
+a
 
+/*cofias*/
+.articulos  article .contenedor-imagen-article{
+    position: relative;
+}
+.articulos  article .contenedor-imagen-article span{
+    z-index: 0;
+    position: absolute;
+    font-size: 0.65em;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0px 0px 2px #000;
+    color: #fff;
+    background-color: rgb(255, 0, 234);
+    box-shadow: -2px 0px 5px rgb(255, 0, 234);    
+    /* background-color: rgb(25, 0, 255);
+    box-shadow: -2px 0px 5px rgb(25, 0, 255); */
+    right: 0px;
+    top: -265px;
+    padding: 2px 2px;
+}
+
+.articulos  article .contenedor-imagen-article .reversible2{
+    top: -225px;
+    color: #fff;
+    text-shadow:none;
+    background-color: rgb(0, 255, 0);
+    box-shadow: 0px 0px 5px rgb(0, 255, 0);
+    font-size: 0.85em;
+}
+.articulos  article .contenedor-imagen-article .cofia{
+    top: 23px;
+}
+.articulos  article .contenedor-imagen-article .oferta-cofia {
+    top: 4.7em;
+    text-align: center;
+    background-color: #ff5733;
+    box-shadow: 0px 0px 2px #ff5733;
+    font-weight: 700;
+}
+.articulos  article .contenedor-imagen-article .oferta-cofia b{
+
+    text-decoration: line-through  #ffffffc9 1.2px ;
+    font-weight: bold;
+    color: #ffffff;
+
+}
+/*Gorras*/
+.articulos  article .contenedor-imagen-article .gorra {
+    border: 1px solid #00000056;
+    border-right: none;
+    top: 16em;
+    font-weight: 700;
+    box-shadow:none;
+}
+.articulos  article .contenedor-imagen-article .oferta {
+    top: 17em;
+    text-align: center;
+    color: #000000;
+    font-size: 0.65em;
+    text-shadow: none;
+    background-color: #ff5733;
+    box-shadow: 0px 0px 4px #ff5733;
+    font-weight: bolder;
+}
+.articulos  article .contenedor-imagen-article .oferta b{
+
+    text-decoration: line-through  ;
+    font-weight: bold;
+
+}
+.articulos  article .contenedor-imagen-article .rev-gorra {
+    top: 0em;
+    z-index: 3;
+    
+    box-shadow:none;
+}
 /* Header */
 /* Nav */
 header{
@@ -132,291 +209,6 @@ header nav a img:hover{
 
 
 
-
-
-
-
-/* Responsive CSS */
-
-/* header responsive1 */ 
-@media (max-width: 938px){
-    .header1{
-        display: none;
-    }
-
-    
-    .header_responsive1{
-        display: flex;
-    }
-
-    *{
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    .nav-bar, #redes_sociales{
-        display: flex;
-        list-style: none;
-
-    }
-
-    #redes_sociales a{
-        text-decoration: none;
-        text-transform: none;
-        color: white;
-    }
-    .nav-bar{
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        padding-right: 10px;
-
-    }
-
-    header nav a img{
-        border-radius: 100%;
-        width: 45px;
-        height: 35px;        
-
-    }
-    #menu{
-        display: block;
-        color: white;
-    }
-    #navegar{
-        margin-left: 30px;
-    }
-    .betsob{
-        font-size: 30px;
-        text-transform: uppercase;
-        border: 1px solid white;
-        color: white;
-        text-decoration: none;
-        box-shadow: 0px 0px 3px white;
-        margin: 5px 5px;
-    }
-    .header_responsive1{
-        display: flex;
-        justify-content: space-between;
-
-        align-items: center;
-        overflow: visible;
-    }
-    #redes_sociales{
-        margin-right: 15px;
-        padding-left: 10px;
-    }   
-    #redes_sociales li{
-        padding: 0px 7px;
-    }
-    .menu, .submenu{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-    .menu{
-        background-color: rgba(68, 68, 68, 0.575);
-        cursor: pointer;
-        display: block;
-        color: white;
-        overflow: visible;
-
-    }
-
-
-    .menu__link{
-        display: block;
-        padding: 10px;
-        color: white;
-        text-decoration: none;
-        
-    }
-    .menu__link:hover{
-
-        background-color: rgb(68, 68, 255);
-    }
-    .submenu{
-        height: 0;
-        overflow: hidden;
-        transition: all 0.3s;
-        width: 200px;
-    }
-
-    .submenu .menu__link{
-        background-color: rgb(74, 75, 78);
-        padding-left: 20px;
-        padding: 20px;
-
-    }
-    .submenu .menu__link:hover{
-        background-color:  rgb(134, 134, 134);
-    }
-    .container-submenu{
-        position: relative;
-
-    }
-
-    .submenu{
-        position: absolute;
-        overflow: visible;
-        z-index: 1000;
-        opacity: 0;
-        visibility: hidden;
-    }
-    .container-submenu:hover .submenu{
-        opacity: 1;
-        visibility: visible;
-
-    }
-    .submenu li:hover{
-        background-color: rgb(34, 48, 255);
-    }
-    .nav-bar ul li i{
-        font-size: 21px;
-
-
-    }
-
-
-
-
-
-
-}
-
-
-/* header responsive2 */ 
-@media (max-width: 457px){
-    .header_responsive1{
-        display: none;
-    }
-
-
-    .header_responsive2{
-        display: flex;
-        background-color: rgba(0, 0, 0, 0.205);
-
-
-    }
-    .nav-bar a img{
-        width: 37px;
-        margin-top: 3px;
-
-    }
-    *{   
-        box-sizing: border-box;
-        margin: 0; 
-        padding: 0; 
-    }
-    .nav-bar, #redes_sociales{
-        display: flex;
-        list-style: none;
-
-    }
-    #redes_sociales a{
-        margin-right: 15px;
-        padding-left: 10px;
-    }   
-    #redes_sociales li{
-        padding: 0px 7px;
-    }
-    .menu, .submenu{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-    .menu{
-        background-color: rgb(68, 68, 68);
-        cursor: pointer;
-        display: block;
-        color: white;
-        overflow: visible;
-        margin-right: 10px;
-        border: none;
-        border-radius: 100%;
-    }
-    .menu__link{
-        display: block;
-        padding: 10px;
-        color: white;
-        text-decoration: none; 
-    }
-    .menu__link:hover{
-        background-color: rgb(68, 68, 255);
-    }
-    .submenu{
-        position: absolute;
-        overflow: visible;
-        margin-left: -161px;
-        margin-top: 1px;
-        z-index: 1000;
-        opacity: 0;
-        visibility: hidden;
-    }
-    .submenu .menu__link{
-        background-color: rgb(39, 39, 39);
-        padding-left: 20px;
-        padding: 10px;
-    }
-    .submenu .menu__link:hover{
-        background-color:  rgb(134, 134, 134);
-    }
-    .container-submenu{
-        position: relative;
-    }
-    .submenu{
-        position: absolute;
-        overflow: visible;
-        z-index: 1000;
-        opacity: 0;
-        visibility: hidden;
-    }
-    .container-submenu:hover .submenu{
-        opacity: 1;
-        visibility: visible;
-
-    }
-    .submenu li:hover{
-        background-color: rgb(34, 48, 255);
-    }
-    .nav-bar ul li a i{
-        font-size: 21px;
-    }
-    [alternativo="ok"]{
-        margin-right: 10px;
-    }
-
-
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Section1 */
 .section-1-main{
     height: 670px;
@@ -426,11 +218,11 @@ header nav a img:hover{
     align-items: center;
     backdrop-filter: blur(3px);
     font-size: 35px;
-    color: rgb(240, 240, 240);
     
 }
 .section-1-main .right{
     width: 700px;
+    color: #000;
 }
 .section-1-main .left{
     width: 100%;
@@ -442,36 +234,15 @@ header nav a img:hover{
 }
 .bienvenida{
     text-align: center;
-    box-shadow: 0px 0px 2px rgb(255, 255, 255);
-    border: 1px solid white;
     margin: 0px 30px;
     
     
 }
-#palabra-betsob{
+
+.bienvenida h1{
+    font-size: 1.18em;
     color: rgb(0, 0, 0);
-    border-bottom: 1px solid #000;
 
-}
-.bienvenida h2{
-    font-size: 20px;
-    color: rgb(255, 255, 255);
-
-    margin-top: 10px;
-}
-
-.bienvenida a{
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    border: 1px solid rgb(255, 255, 255);
-    padding: 10px;
-    font-size: 20px;
-    background-color: rgb(0, 0, 0);
-    
-}
-.bienvenida a:hover{
-    background-color: rgb(53, 53, 53);
-    box-shadow: 0px 0px 4px rgb(240, 240, 240);
 }
 
 
@@ -612,49 +383,6 @@ header nav a img:hover{
 .section-3-main section article .titulo h3{
     font-size: 30px;
 }
-@media (max-width: 1186px){
-    .section-3-article-img{
-        border-radius: 60%;
-        margin: 10px 0px;
-    }
-    .section-3-main section{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-
-@media (max-width: 673px){
-
-    .section-3-main section{
-        grid-template-columns: repeat(1, 1fr);
-    }
-    
-    .section-3-main section article {
-        margin: 20px 80px;
-    }
-
-}
-
-@media (max-width: 559px){
-    .section-3-main section article {
-        margin: 20px 40px;
-    }
-}
-@media (max-width: 404px){
-    .section-3-article-img{
-        height: 300px;
-    }
-}
-@media (max-width: 363px){
-    .section-3-main section article {
-        margin: 20px 20px;
-    }
-    .section-3-main section{
-        padding-bottom: 50px;
-    }
-    
-}
 .contenido-section-4-main h4{
     font-size: 30px;
     text-align: center;
@@ -663,6 +391,9 @@ header nav a img:hover{
 }
 .contenido-section-4-main{
     margin-bottom: 50px;
+}
+.contenedor-bienvenida a{
+    text-shadow: none;
 }
 
 
@@ -678,9 +409,7 @@ footer{
     height: auto;
     color: white;
     background-color: rgb(0, 0, 0);
-
-
-    
+    padding-bottom: 10px;
 }
 footer h1{
     font-size: 35px;
@@ -693,7 +422,6 @@ footer h1{
 }
 .informacion{
     display: flex;
-    margin-bottom: 30px;
     justify-content: space-around;
 }
 .informacion_extra{
@@ -762,11 +490,20 @@ footer h1{
     text-decoration: underline;
 }
 
-
+.divisor-ciudad{
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: flex;
+    justify-content: flex-start;
+}
 .pie_de_pagina{
+    margin: 0;
+    padding: 0;
+    border: none;
     background-color: rgb(73, 73, 73);
-    padding: 10px 0px;
-    padding-left: 7px;
+    
+    color: #fff;
 }
 
 

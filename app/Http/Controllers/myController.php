@@ -14,7 +14,8 @@ class myController extends Controller
 
     public function betsob(){
     	$title = 'Betsob - Sitio Web';
-    	return view('betsob.home-betsob', compact('title'));
+        $footer = 'San Nicolás de los Arroyos, Buenos Aires.';
+    	return view('betsob.home-betsob', compact('title', 'footer'));
     }
     public function perfectec(){
     	$title = 'Sitio Web - Perfectec';

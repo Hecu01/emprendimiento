@@ -8,8 +8,10 @@
 		<ul id="navegar">
 			<li class="menu__item"><a href="{{ route('betsob') }}"  class="menu__link">Inicio</a></li>
 
-			<li><a href="{{ route('cofias') }}">Cofias para soldadores</a></li>
-			<li class="menu__item"><a href="{{ route('gorras') }}" class="menu__link">Gorras para soldadores</a></li>
+			<li><a href="{{ route('cofias') }}">Cofias</a></li>
+			<li class="menu__item"><a href="{{ route('gorras') }}" class="menu__link">Gorras</a></li>
+			<li class="menu__item"><a href="{{ route('gorras') }}" class="menu__link">Encargar</a></li>
+			<li class="menu__item"><a href="{{ route('gorras') }}" class="menu__link">Formulario</a></li>
 
 		</ul>	
 
@@ -23,8 +25,6 @@
 		<a href="#" style="margin-top: -13px;">
 			
 			<img src="img/betsob/header arg.png" alt="argentina">
-		</a>
-		
-		
+		</a>			
 	</nav>
 </header>
