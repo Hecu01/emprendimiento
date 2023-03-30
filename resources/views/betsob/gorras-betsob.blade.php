@@ -14,9 +14,13 @@
 				<section class="row justify-content-center col-12 articulos">
 					<article>
 						<h1>Talle#35-36</h1>	
-						<div class="contenedor-imagen-article">
+						<div class="contenedor-imagen-article" >
 				
-							<img src="img/betsob/gorras/articulo1.jpg" alt="Gorra" class="imagen">
+							<img src="img/betsob/gorras/articulo1.jpg" alt="Gorra" class="imagen" data-bs-toggle="modal"  data-bs-target="#myModal" type="button">
+							
+							<span class="reversible reversible2 gorra">
+								$3000 AR
+							</span>
 						</div>				
 						<div class="detalles">
 							<button class="btn btn-success">

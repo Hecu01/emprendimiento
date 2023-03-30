@@ -64,7 +64,7 @@
 								15% OFF <br>
 								<b>$2800</b>
 							</span>
-							<span class="reversible reversible2 cofia">
+							<span class="reversible reversible2 gorra">
 								$2380 AR
 							</span>
 						</div>
@@ -80,7 +80,7 @@
 						<div class="contenedor-imagen-article">
 							<img src="img/betsob/cofias/articulo4-cofia.jpg" alt="Gorra" class="imagen">
 
-							<span class="reversible reversible2 cofia">
+							<span class="reversible reversible2 gorra">
 								$2380 AR
 							</span>
 						</div>
@@ -102,7 +102,7 @@
 								15% OFF <br>
 								<b>$2800</b>
 							</span>
-							<span class="reversible reversible2 cofia">
+							<span class="reversible reversible2 gorra">
 								$2380 AR
 							</span>
 						</div>

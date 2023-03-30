@@ -20,94 +20,20 @@
 }
 a
 
-/*cofias*/
-.articulos  article .contenedor-imagen-article{
-    position: relative;
-}
-.articulos  article .contenedor-imagen-article span{
-    z-index: 0;
-    position: absolute;
-    font-size: 0.65em;
-    font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-shadow: 0px 0px 2px #000;
-    color: #fff;
-    background-color: rgb(255, 0, 234);
-    box-shadow: -2px 0px 5px rgb(255, 0, 234);    
-    /* background-color: rgb(25, 0, 255);
-    box-shadow: -2px 0px 5px rgb(25, 0, 255); */
-    right: 0px;
-    top: -265px;
-    padding: 2px 2px;
-}
-
-.articulos  article .contenedor-imagen-article .reversible2{
-    top: -225px;
-    color: #fff;
-    text-shadow:none;
-    background-color: rgb(0, 255, 0);
-    box-shadow: 0px 0px 5px rgb(0, 255, 0);
-    font-size: 0.85em;
-}
-.articulos  article .contenedor-imagen-article .cofia{
-    top: 23px;
-}
-.articulos  article .contenedor-imagen-article .oferta-cofia {
-    top: 4.7em;
-    text-align: center;
-    background-color: #ff5733;
-    box-shadow: 0px 0px 2px #ff5733;
-    font-weight: 700;
-}
-.articulos  article .contenedor-imagen-article .oferta-cofia b{
-
-    text-decoration: line-through  #ffffffc9 1.2px ;
-    font-weight: bold;
-    color: #ffffff;
-
-}
-/*Gorras*/
-.articulos  article .contenedor-imagen-article .gorra {
-    border: 1px solid #00000056;
-    border-right: none;
-    top: 16em;
-    font-weight: 700;
-    box-shadow:none;
-}
-.articulos  article .contenedor-imagen-article .oferta {
-    top: 17em;
-    text-align: center;
-    color: #000000;
-    font-size: 0.65em;
-    text-shadow: none;
-    background-color: #ff5733;
-    box-shadow: 0px 0px 4px #ff5733;
-    font-weight: bolder;
-}
-.articulos  article .contenedor-imagen-article .oferta b{
-
-    text-decoration: line-through  ;
-    font-weight: bold;
-
-}
-.articulos  article .contenedor-imagen-article .rev-gorra {
-    top: 0em;
-    z-index: 3;
-    
-    box-shadow:none;
-}
 /* Header */
 /* Nav */
 header{
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
     background:rgb(0, 0, 0);
     position: relative;
     width: 100%;
 }
 .header1{
+    
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
     background:rgb(0, 0, 0);
+    
 }
 header nav a img{
 
@@ -125,8 +51,7 @@ header nav a img:hover{
 }
 #nav-betsob{
 
-    margin-bottom: -13.5px;
-    
+    margin-top: 18px;
     background:rgb(0, 0, 0);
 }
 #navegar{
@@ -135,24 +60,31 @@ header nav a img:hover{
 #navegar li{
     margin: 0px 10px;
     margin-top: 2px;
+    height: 61px;
 
 }
 #navegar li a{
+    transition: all 0.1s;
+    height: 100%;
     text-transform: uppercase;
     font-size: 14px;
+    
 }
 .social_media{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 100%;
+    height: 10px;
     padding-top: 15px;
     padding-right: 5px;
     position: relative;
 
 }
-.social_media ul li:hover{
+.social_media ul li a:hover{
+    
+    transition: all 0.1s;
     color: rgb(82, 186, 255);
+    border-bottom: 4px solid rgb(82, 186, 255);
 }
 #redes_sociales{
     margin-right: 15px;

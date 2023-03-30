@@ -1,8 +1,8 @@
-<header class="header1">
+<header class="header1" >
+	<!-- Nav -->
 	<a href="{{ route('betsob') }}" class="betsob">
 		Betsob
 	</a>
-	<!-- Nav -->
 	<nav class="social_media" id="nav-betsob">	
 
 		<ul id="navegar">
