@@ -16,6 +16,10 @@ class betsob extends Controller
     	$title = 'Betsob - Cofias para Soldadores';
     	return view('betsob.cofias-betsob',compact('title'));
     }
+	public function formulario(){
+    	$title = 'Betsob - Formulario';
+    	return view('betsob.formulario-betsob',compact('title'));
+    }
 
     // Crear gorra
    	public function crear_gorra(Request $request){

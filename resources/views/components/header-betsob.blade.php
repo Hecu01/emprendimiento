@@ -3,16 +3,20 @@
 	<a href="{{ route('betsob') }}" class="betsob">
 		Betsob
 	</a>
+	<div style="margin-top: 13px">
+		<form action="" method="get" class="d-flex ">
+			<input type="search" name="" placeholder="Talle, gorra, cofia." class="mr-1" style="height: 29.5px">
+			<button class="btn btn-sm btn-success">Buscar</button>
+		</form>
+	</div>
 	<nav class="social_media" id="nav-betsob">	
 
 		<ul id="navegar">
 			<li class="menu__item"><a href="{{ route('betsob') }}"  class="menu__link">Inicio</a></li>
-
 			<li><a href="{{ route('cofias') }}">Cofias</a></li>
 			<li class="menu__item"><a href="{{ route('gorras') }}" class="menu__link">Gorras</a></li>
-			<li class="menu__item"><a href="{{ route('gorras') }}" class="menu__link">Encargar</a></li>
-			<li class="menu__item"><a href="{{ route('gorras') }}" class="menu__link">Formulario</a></li>
-
+			{{-- <li class="menu__item"><a href="#" class="menu__link">Encargar</a></li> --}}
+			<li class="menu__item"><a href="{{ route('formulario-betsob') }}" class="menu__link">Formulario</a></li>
 		</ul>	
 
 		<ul id="redes_sociales">

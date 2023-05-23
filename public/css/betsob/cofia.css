@@ -22,13 +22,18 @@
 
 .articulos  article .contenedor-imagen-article .reversible2{
     top: -225px;
-    color: #fff;
     text-shadow:none;
     background-color: rgb(0, 255, 0);
-    box-shadow: 0px 0px 5px rgb(0, 255, 0);
+
     font-size: 0.85em;
+    border: 1px solid #00000056;
+    border-right: none;
+    top: 16em;
+    font-weight: 700;
+    box-shadow:none;
 }
 .articulos  article .contenedor-imagen-article .cofia{
+    
     top: 23px;
 }
 .articulos  article .contenedor-imagen-article .oferta-cofia {

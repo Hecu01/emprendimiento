@@ -1,39 +1,30 @@
 <?php
-
+use App\Http\Controllers\myController;
+use App\Http\Controllers\betsob;
 use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes - Urbine
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
+
 // Bienvenida
-Route::get('/', 'App\Http\Controllers\myController@welcome')->name('welcome');
-
-/* ------------------------------- BETSOB ------------------------------- */
-// Routes - betsob
-Route::get('/betsob', 'App\Http\Controllers\myController@betsob')->name('betsob');
-Route::get('/gorras-soldadores', 'App\Http\Controllers\betsob@gorras')->name('gorras');
-Route::get('/cofias-soldadores', 'App\Http\Controllers\betsob@cofias')->name('cofias');
-// Crear gorra
-Route::get('/crear', 'App\Http\Controllers\betsob@crear_gorra')->name('gorras.crear');
-Route::put('/store', 'App\Http\Controllers\betsob@crear_gorra')->name('gorras.store');
-
-
-
+Route::get('/', [myController::class, 'welcome'])->name('welcome');
 
 // Perfectec
-Route::get('/perfectec', 'App\Http\Controllers\myController@perfectec')->name('albañil');
+Route::get('/perfectec', [myController::class, 'perfectec'])->name('albañil');
+
+// Routes - betsob
+Route::get('/betsob', [myController::class, 'betsob'])->name('betsob');
+Route::get('/gorras-soldadores', [betsob::class, 'gorras'])->name('gorras');
+Route::get('/cofias-soldadores', [betsob::class, 'cofias'])->name('cofias');
+Route::get('/formulario-betsob', [betsob::class, 'formulario'])->name('formulario-betsob');
+/* Crear gorra --> Route::get('/crear', [betsob::class, 'crear_gorra'])->name('gorras.crear');Route::put('/store', [betsob::class, 'crear_gorra'])->name('gorras.store');*/
 
 // V&C Eventos y Nails
-Route::get('/vyc-eventos-y-nails', 
-	'App\Http\Controllers\myController@vyc')->name('vyc');
+Route::get('/vyc-eventos-y-nails', [myController::class, 'vyc'])->name('vyc');
 
 // Mi blog personal
-Route::get('/blog', 'App\Http\Controllers\myController@myblog')->name('blog');
+Route::get('/blog', [myController::class, 'myblog'])->name('blog');

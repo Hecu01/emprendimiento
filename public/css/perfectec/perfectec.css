@@ -1,0 +1,19 @@
+.navegacion{
+    transition: all 0.6s;
+    text-shadow: 1px 1px 1px #000;
+    
+}
+.navegacion h1{
+    transition: all 0.6s;
+    
+}
+.navegacion h1:hover{
+
+    transition: all 0.6s;
+    transform: scale(1.1);
+}
+
+.navegacion h1 a:hover{
+    color: white;
+    text-decoration: none;
+}

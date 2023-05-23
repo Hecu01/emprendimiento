@@ -19,7 +19,7 @@ class myController extends Controller
     }
     public function perfectec(){
     	$title = 'Sitio Web - Perfectec';
-    	return view('perfectec', compact('title'));
+    	return view('perfectec.home-perfectec', compact('title'));
     }
     public function vyc(){
     	$title = 'Sitio Web - V&C';
