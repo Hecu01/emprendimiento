@@ -31,7 +31,7 @@
         <script src="https://unpkg.com/scrollreveal"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
-        <title>Urbine01 Home</title>
+        <title>{{ isset($title) ? $title : 'Sitio web'}}</title>
     </head>
 
     <body>
@@ -41,39 +41,7 @@
         <div class="contenedor">
             
             <!-- Menu -->
-            <div class="menu">
-
-                <a href="index.html"> <img src="img/blog/logo.jpg" alt="logo" width="90px" height="60px"></a>
-                
-                <h1>Home Page</h1> 
-                
-                <!-- Responsive Menu -->
-                <label for="btn-menu"> <i class="fas fa-bars" id="bars"></i> </label>
-                <input type="checkbox" aria-label="Checkbox" id="btn-menu">
-                <nav class="menu-responsive" id="menu-inicio">
-
-                    <ul class="barra-menu">
-                        <li><a href="#menu-inicio">Inicio </a></li>
-                        <li>
-                            <a href="#sobre-mi">
-                                Sobre mí
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#biografia">
-                                Biografía
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#formulario">
-                                Formulario
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            <x-header_blog/>
 
 
             <!-- Header -->
@@ -225,89 +193,7 @@
 
 
                 <!-- Footer -->
-                <footer>
-                    
-                    <div class="container-footer" id="formulario">
-                        <div class="top-bottom-footer" id="div-h3-footer">
-                            <h3>Haceme una consulta</h3>
-                        </div>
-                
-                        <div class="form">
-                            <form method="POST" >
-
-                                <h2>Formulario</h2>
-                                <label for="nombre-persona">Nombre</label><br>
-                                <input type="text" name="name" id="nombre-persona"> <br>
-                        
-                                <label for="apellido-persona">Apellido</label><br>
-                                <input type="text" name="surname" id="apellido-persona"><br>
-                        
-                                <label for="Email">Correo Electrónico</label><br>
-                                <input type="email" name="correo" id="Email"> <br>
-                        
-                                <label>Mensaje</label> <br>
-                                <textarea name="messagge" id="mensajeform"  rows="4" placeholder="Ingrese un texto" ></textarea>
-                        
-                                <br>    
-                                <div class="contenedor-submit">
-                                    
-                                    <input type="submit" value="ENVIAR" name="register" id="enviar">
-
-                                </div>
-                                
-                  
-                            </form>
-
-                            
-                        </div>
-                
-                        <div class="contactos top-bottom-footer">
-                            <h2>Contactos:</h2>
-                            <ul class="barra-contactos">
-                                <li>
-                                    <a href="https://www.facebook.com/AC.DC.mm.Si/" aria-label="Facebook personal" rel="noopener" target="_BLANK"> 
-                                        <i class="fab fa-facebook"></i>
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="https://www.instagram.com/urbine01/" aria-label="Instagram personal" rel="noopener" target="_BLANK">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="https://api.whatsapp.com/send?phone=5493364036241&text=¡Hola, Valen Urbine, vengo desde la página!" target="_BLANK" aria-label="Mensaje a whatsapp" rel="noopener">
-                                        <i class="fab fa-whatsapp"></i> 
-                                    </a>
-                                </li>
-
-
-                                <li>
-                                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlJVXXhdZlLNPvWNvnDgRTRvrwTjlvmGKJPlBmztLNJKJvNRwZwqPqkxBWWqZPDBkCWGDB" aria-label="Correo Electrónico" rel="noopener" target="_BLANK"> 
-                                        <i class="fas fa-envelope"></i>
-                                    </a>
-                                </li>
-
-
-                                <li>
-                                    <a href="https://www.linkedin.com/in/valentin-urbine-4217b218b/" target="_BLANK" rel="noopener" aria-label="Linkedin personal">
-                                        <i class="fab fa-linkedin"></i> 
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="https://github.com/Hecu01" aria-label="Repositorio github" rel="noopener" target="_BLANK">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-
-                    <p id="cele">Copyright &copy; Valentín Urbine. Todos los derechos reservados</p> 
-                </footer>
+                <x-footer_blog/>
 
                 
             </div>

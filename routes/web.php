@@ -28,3 +28,5 @@ Route::get('/vyc-eventos-y-nails', [myController::class, 'vyc'])->name('vyc');
 
 // Mi blog personal
 Route::get('/blog', [myController::class, 'myblog'])->name('blog');
+Route::post('/blog', [myController::class, 'myblog_crear'])->name('consulta.realizar_consulta');
+Route::get('/blog-consultas', [myController::class, 'myblog_consultas'])->name('blog_consultas');

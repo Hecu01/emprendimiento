@@ -16,7 +16,7 @@
 			<li><a href="{{ route('cofias') }}">Cofias</a></li>
 			<li class="menu__item"><a href="{{ route('gorras') }}" class="menu__link">Gorras</a></li>
 			{{-- <li class="menu__item"><a href="#" class="menu__link">Encargar</a></li> --}}
-			<li class="menu__item"><a href="{{ route('formulario-betsob') }}" class="menu__link">Formulario</a></li>
+			<li class="menu__item"><a href="{{ route('formulario-betsob') }}" class="menu__link">Crud</a></li>
 		</ul>	
 
 		<ul id="redes_sociales">

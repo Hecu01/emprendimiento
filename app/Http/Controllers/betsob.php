@@ -17,7 +17,7 @@ class betsob extends Controller
     	return view('betsob.cofias-betsob',compact('title'));
     }
 	public function formulario(){
-    	$title = 'Betsob - Formulario';
+    	$title = 'Betsob - Crud';
     	return view('betsob.formulario-betsob',compact('title'));
     }
 

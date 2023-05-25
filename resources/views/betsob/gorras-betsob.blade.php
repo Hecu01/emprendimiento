@@ -78,10 +78,7 @@
 							<span class="reversible rev-gorra">
 								REVERSIBLE
 							</span>
-							<span class="reversible oferta">
-								OFERTA <br>
-								<b>$2500</b>
-							</span>
+
 							<span class="reversible reversible2 gorra">
 								$1625 AR
 							</span>
@@ -100,10 +97,7 @@
 							<span class="reversible rev-gorra">
 								REVERSIBLE
 							</span>
-							<span class="reversible oferta">
-								15% OFF <br>
-								<b>$2800</b>
-							</span>
+
 							<span class="reversible reversible2 gorra">
 								$2380 AR
 							</span>
