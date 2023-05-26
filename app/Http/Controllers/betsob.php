@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class betsob extends Controller
 {
-
+	// Navegacion
     public function gorras(){
 
     	$title = 'Betsob - Gorras para Soldadores';
@@ -16,9 +16,11 @@ class betsob extends Controller
     	$title = 'Betsob - Cofias para Soldadores';
     	return view('betsob.cofias-betsob',compact('title'));
     }
+
+	// Admin
 	public function formulario(){
     	$title = 'Betsob - Crud';
-    	return view('betsob.formulario-betsob',compact('title'));
+    	return view('betsob.admin.formulario-betsob',compact('title'));
     }
 
     // Crear gorra

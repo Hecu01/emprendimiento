@@ -1,0 +1,28 @@
+/* Crear Gorra */
+.admin-1 aside {
+    width:230px;
+    color: #fff;
+}
+.admin-1 aside h4{
+    text-align:center;
+}
+.admin-1 aside nav{
+ 
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    transition: 0.5s all;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.custom-file-upload:hover {
+    transition: 0.5s all;
+    background-color: #a0a0a0;
+} 
