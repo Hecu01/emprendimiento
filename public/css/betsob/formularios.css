@@ -1,4 +1,4 @@
-/* Crear Gorra */
+/*---------------------- Crear Gorra ----------------------*/
 .admin-1 aside {
     width:230px;
     color: #fff;
@@ -13,7 +13,11 @@
 input[type="file"] {
     display: none;
 }
-
+/* formulario*/
+#crear-gorra-form{
+    width: 340px; 
+    border: 2px solid rgb(0,0,0,0.2);
+}
 .custom-file-upload {
     transition: 0.5s all;
     border: 1px solid #ccc;

@@ -37,22 +37,7 @@
     font-weight: 700;
     box-shadow:none;
 }
-.articulos  article .contenedor-imagen-article .oferta {
-    top: 17em;
-    text-align: center;
-    color: #000000;
-    font-size: 0.65em;
-    text-shadow: none;
-    background-color: #ff5733;
-    box-shadow: 0px 0px 4px #ff5733;
-    font-weight: bolder;
-}
-.articulos  article .contenedor-imagen-article .oferta b{
 
-    text-decoration: line-through  ;
-    font-weight: bold;
-
-}
 .articulos  article .contenedor-imagen-article .rev-gorra {
     top: 0em;
     z-index: 3;

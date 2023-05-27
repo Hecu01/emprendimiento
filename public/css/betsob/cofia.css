@@ -11,8 +11,9 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-shadow: 0px 0px 2px #000;
     color: #fff;
-    background-color: rgb(255, 0, 234);
-    box-shadow: -2px 0px 5px rgb(255, 0, 234);    
+    background-color: #C0392B;
+    box-shadow: -2px 0px 5px #C0392B;    
+    border: 1px solid #ffffff83;
     /* background-color: rgb(25, 0, 255);
     box-shadow: -2px 0px 5px rgb(25, 0, 255); */
     right: 0px;
@@ -35,18 +36,4 @@
 .articulos  article .contenedor-imagen-article .cofia{
     
     top: 23px;
-}
-.articulos  article .contenedor-imagen-article .oferta-cofia {
-    top: 4.7em;
-    text-align: center;
-    background-color: #ff5733;
-    box-shadow: 0px 0px 2px #ff5733;
-    font-weight: 700;
-}
-.articulos  article .contenedor-imagen-article .oferta-cofia b{
-
-    text-decoration: line-through  #ffffffc9 1.2px ;
-    font-weight: bold;
-    color: #ffffff;
-
 }
