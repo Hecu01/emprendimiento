@@ -39,7 +39,41 @@
 			<x-header/>
 
 			<!-- Header Betsob -->
-			<x-header-betsob/>
+			<header class="header1" >
+				<!-- Nav -->
+				<a href="{{ route('betsob') }}" class="betsob">
+					Betsob
+				</a>
+				{{-- <div style="margin-top: 13px">
+					<form action="" method="get" class="d-flex ">
+						<input type="search" name="" placeholder="Talle, gorra, cofia." class="mr-1" style="height: 29.5px">
+						<button class="btn btn-sm btn-success">Buscar</button>
+					</form>
+				</div> --}}
+				<nav class="social_media" id="nav-betsob">	
+			
+					<ul id="navegar">
+						<li class="menu__item"><a href="{{ route('betsob') }}"  class="menu__link">Inicio</a></li>
+						<li><a href="{{ route('cofias') }}">Cofias</a></li>
+						<li class="menu__item"><a href="{{ route('gorras') }}" class="menu__link">Gorras</a></li>
+						{{-- <li class="menu__item"><a href="#" class="menu__link">Encargar</a></li> --}}
+						<li class="menu__item"><a href="{{ route('formulario-betsob') }}" class="menu__link">Crud</a></li>
+					</ul>	
+			
+					<ul id="redes_sociales">
+						<li><a href="https://www.facebook.com/Gorras-para-Soldadores-BetSob-San-Nicol%C3%A1s-Buenos-Aires-Argentina-1556529141285253" target="_BLANK"><i class="fab fa-facebook"></i></a></li>
+						<li><a href="#" target="_BLANK"><i class="fab fa-whatsapp"></i></a></li>
+						<li><a href="#" target="_BLANK"><i class="fab fa-instagram"></i></a></li>
+						
+					</ul>
+			
+					<a href="#" style="margin-top: -13px;">
+						
+						<img src="../img/betsob/header arg.png" alt="argentina">
+					</a>			
+				</nav>
+			</header>
+			
 			
 			<!-- Seccion Principal -->
 			<div class="principal">
@@ -59,11 +93,12 @@
 						</nav>
 					</aside>
 			
-					<div class="container section-principal d-flex" style="justify-content: space-between">
+					<div class="container section-principal d-flex" 
+					style="justify-content: space-between; background: url('../img/betsob/fondo_admin.jpg') no-repeat center/cover">
 				
-						<form action="" class="my-3" style="border: 1px solid rgb(0,0,0, 0.2); width: 410px;">
+						<form action="" class="my-3" style="background: #fff;border: 2px solid rgb(0,0,0, 0.2); width: 410px;">
 							<h1 style="text-align: center">Editar Gorra: {{ $gorras->id }}</h1>
-							<div class="container-fluid d-flex justify-content-center" style="height: 250px; width:250px: display:flex; justify-content: center; box-shadow: 0px 0px 1px #000; background:#fff">
+							<div class="container-fluid d-flex justify-content-center" style="height: 250px; width:250px: display:flex; justify-content: center; box-shadow: 0px 0px 1px #000; background:#000">
 
 									
 								<img src="../{{ $gorras->gorra }}" style=" ">
@@ -94,17 +129,51 @@
 								</div>
 								<div class="mr-4">
 									<div style="display:grid;">
-										<button class="btn btn-success mb-1">Guardar</button>
-										<button class="btn btn-secondary">Regresar</button>
+										<a href="#" class="btn btn-success mb-1">Guardar</a>
+										<a href="{{ url()->previous() }}" class="btn btn-secondary">Regresar</a>
 									</div>
 								</div>
 							</div>
 
 						</form>
+
+						<div class="div">
+							
+							<table class="table table-striped table-dark  mt-3" style="width:650px">
+								<thead>
+				
+									<th>ID</th>
+									<th>Talle</th>
+									<th>Precio</th>
+									<th>ImgGorra</th>
+									<th>Reversible</th>
+									
+								</thead>
+								<tbody>
+									<tr>
+										<th>{{ $gorras->id}}</th>
+										<td>Talle#{{ $gorras->talle}}</td>
+										<td>${{ $gorras->precio}}</td>
+										<td><img src="../{{ $gorras->gorra}}" alt="" width="50" height="50"></td>
+										@if($gorras->reversible == true)
+											<td>Reversible</td>
+											@else 
+											<td>No reversible</td>
+										@endif
+	
+										
+									</tr>
+				
+								</tbody>
+							</table>
+
+						</div>
 				
 						
 					</div>
 				</div>
+
+
 			</div>
 
 
