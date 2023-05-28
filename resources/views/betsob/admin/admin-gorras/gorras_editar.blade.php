@@ -39,41 +39,7 @@
 			<x-header/>
 
 			<!-- Header Betsob -->
-			<header class="header1" >
-				<!-- Nav -->
-				<a href="{{ route('betsob') }}" class="betsob">
-					Betsob
-				</a>
-				{{-- <div style="margin-top: 13px">
-					<form action="" method="get" class="d-flex ">
-						<input type="search" name="" placeholder="Talle, gorra, cofia." class="mr-1" style="height: 29.5px">
-						<button class="btn btn-sm btn-success">Buscar</button>
-					</form>
-				</div> --}}
-				<nav class="social_media" id="nav-betsob">	
-			
-					<ul id="navegar">
-						<li class="menu__item"><a href="{{ route('betsob') }}"  class="menu__link">Inicio</a></li>
-						<li><a href="{{ route('cofias') }}">Cofias</a></li>
-						<li class="menu__item"><a href="{{ route('gorras') }}" class="menu__link">Gorras</a></li>
-						{{-- <li class="menu__item"><a href="#" class="menu__link">Encargar</a></li> --}}
-						<li class="menu__item"><a href="{{ route('formulario-betsob') }}" class="menu__link">Crud</a></li>
-					</ul>	
-			
-					<ul id="redes_sociales">
-						<li><a href="https://www.facebook.com/Gorras-para-Soldadores-BetSob-San-Nicol%C3%A1s-Buenos-Aires-Argentina-1556529141285253" target="_BLANK"><i class="fab fa-facebook"></i></a></li>
-						<li><a href="#" target="_BLANK"><i class="fab fa-whatsapp"></i></a></li>
-						<li><a href="#" target="_BLANK"><i class="fab fa-instagram"></i></a></li>
-						
-					</ul>
-			
-					<a href="#" style="margin-top: -13px;">
-						
-						<img src="../img/betsob/header arg.png" alt="argentina">
-					</a>			
-				</nav>
-			</header>
-			
+			<x-header-betsob/>
 			
 			<!-- Seccion Principal -->
 			<div class="principal">
@@ -87,66 +53,65 @@
 								<li><a href="{{ route('formulario-betsob') }}">Admin</a></li>
 								<li><a href="#" onclick="alert('Aún no funciona.')">Crear Gorra</a></li>
 								<li><a href="#" onclick="alert('Aún no funciona.')">Crear Cofia</a></li>
-								<li><a href="#" onclick="alert('Aún no funciona.')">Tabla de las Gorras</a></li>
-								<li><a href="#" onclick="alert('Aún no funciona.')">Tabla de las Cofias</a></li>
 							</ul>
 						</nav>
 					</aside>
 			
 					<div class="container section-principal d-flex" 
 					style="justify-content: space-between; background: url('../img/betsob/fondo_admin.jpg') no-repeat center/cover">
-				
-						<form action="" class="my-3" style="background: #fff;border: 2px solid rgb(0,0,0, 0.2); width: 410px;">
+			
+						<form method="POST" action="{{ route('gorra.actualizar', $gorras->id) }}" class="my-3" style="background: #fff;box-shadow: 0px 0px 3px #000;border: 1px solid rgb(0,0,0, 0.2); width: 410px;">
 							<h1 style="text-align: center">Editar Gorra: {{ $gorras->id }}</h1>
+							
+							@method("PUT")
+							@csrf
+							
 							<div class="container-fluid d-flex justify-content-center" style="height: 250px; width:250px: display:flex; justify-content: center; box-shadow: 0px 0px 1px #000; background:#000">
-
-									
 								<img src="../{{ $gorras->gorra }}" style=" ">
-
-
 							</div>
 							<div class="row p-3" style="align-items: center; justify-content: space-between">
 								<div class="left ml-4">
 									<label for="">Talle</label><br>
-									<input type="text"value="{{ $gorras->talle }}"><br>
+									<input type="number" class="form-control" name="talle" value="{{ $gorras->talle }}">
 									<label for="">Precio</label><br>
-									<input type="text"value="{{ $gorras->precio }}"><br>
+									<input type="number" class="form-control" name="precio" value="{{ $gorras->precio }}">
 									<label for="">Reversible</label><br>
-
+			
 									@if ($gorras->reversible == true)
-										<select name="" id="">
+										<select name="reversible" id="">
 											<option value="1" selected>Sí (Asignado)</option>
 											<option value="0">No</option>
 										</select>
 									@else
-										<select name="" id="">
+										<select name="reversible" id="">
 											
 											<option value="1" >Sí</option>
 											<option value="0" selected>No (Asignado)</option>
 										</select>
 									@endif
-
+			
 								</div>
 								<div class="mr-4">
 									<div style="display:grid;">
-										<a href="#" class="btn btn-success mb-1">Guardar</a>
+										<button type="submit" class="btn btn-success mb-1">Guardar</button>
 										<a href="{{ url()->previous() }}" class="btn btn-secondary">Regresar</a>
 									</div>
 								</div>
 							</div>
-
+			
 						</form>
-
+			
 						<div class="div">
 							
-							<table class="table table-striped table-dark  mt-3" style="width:650px">
+							<table class="table table-striped table-dark  mt-3" style="width:650px; box-shadow: 0px 0px 3px #000;">
 								<thead>
-				
+			
 									<th>ID</th>
 									<th>Talle</th>
 									<th>Precio</th>
 									<th>ImgGorra</th>
 									<th>Reversible</th>
+									<th>Actualizado</th>
 									
 								</thead>
 								<tbody>
@@ -160,20 +125,25 @@
 											@else 
 											<td>No reversible</td>
 										@endif
-	
+										<td>{{ $gorras->updated_at}}</td>
 										
 									</tr>
-				
+									
 								</tbody>
 							</table>
+							@if (session('mensaje'))
+
+								<div class="alert alert-success alert-dismissible fade show" role="alert">
+									<strong>Enhorabuena!</strong> {{ session('mensaje') }}<br>
+									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+								</div>
+							@endif
 
 						</div>
-				
+			
 						
 					</div>
 				</div>
-
-
 			</div>
 
 
@@ -187,3 +157,7 @@
 		<script src="javascript/main.js"></script>
 	</body>
 </html>
+
+
+
+	

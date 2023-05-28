@@ -10,15 +10,13 @@
 					<li><a href="{{ route('formulario-betsob') }}">Admin</a></li>
 					<li><a href="#" onclick="alert('Aún no funciona.')">Crear Gorra</a></li>
 					<li><a href="#" onclick="alert('Aún no funciona.')">Crear Cofia</a></li>
-					<li><a href="#" onclick="alert('Aún no funciona.')">Tabla de las Gorras</a></li>
-					<li><a href="#" onclick="alert('Aún no funciona.')">Tabla de las Cofias</a></li>
 				</ul>
 			</nav>
 		</aside>
 
-		<div class="container section-principal d-flex" style="justify-content: space-between">
+		<div class="container section-principal d-flex py-5">
 	
-			<form class="g-3 align-items-center my-3 ml-4 p-3 col-4" id="crear-gorra-form" action="{{ route('gorra.cargar_gorra') }}"  enctype="multipart/form-data" method="POST">
+			<form class="g-3 align-items-center my-3 ml-4 p-3 col-4" id="crear-gorra-form" action="{{ route('gorra.cargar_gorra') }}"  enctype="multipart/form-data" method="POST" style="background: #fff; box-shadow: 0px 0px 3px #000">
 				@csrf
 				<h2 style="text-align: center; font-family:sans-serif">Agregar una gorra</h2>
 				<div class="col-12">
@@ -102,12 +100,16 @@
 									<a href="#" class="btn btn-dark "title="Ver más">
 										<i class="fa-sharp fa-solid fa-eye"></i>
 									</a>									
-									<a href="{{ route('gorra.editar', $item) }}" class="btn btn-success "title="Editar">
+									<a href="{{ route('gorra.editar', $item->id) }}" class="btn btn-success "title="Editar">
 										<i class="fa-solid fa-pen-to-square"></i>
 									</a>
-									<a href="#" class="btn btn-danger "title="Eliminar">
-										<i class="fa-solid fa-trash"></i>
-									</a>
+									<form action="{{ route('gorra.eliminar', $item->id) }}" class="d-inline" method="POST">
+										@method('DELETE')
+										@csrf
+										<button type="submit" class="btn btn-danger "title="Eliminar">
+											<i class="fa-solid fa-trash"></i>
+										</button>
+									</form>
 								</td>
 								
 							</tr>
@@ -115,6 +117,13 @@
 	
 					</tbody>
 				</table>
+				@if (session('mensaje'))
+
+					<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						<strong>Atención!</strong> {{ session('mensaje') }}
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
+				@endif
 				<div class="d-flex justify-content-center" >
 					{{ $gorras->links() }}
 				</div>

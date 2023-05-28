@@ -29,4 +29,11 @@ input[type="file"] {
 .custom-file-upload:hover {
     transition: 0.5s all;
     background-color: #a0a0a0;
-} 
+}
+.section-principal{
+    justify-content: space-between;
+    background: url('../../img/betsob/fondo_admin.jpg') no-repeat center/cover;
+
+
+
+}

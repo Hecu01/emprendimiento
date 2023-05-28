@@ -48,10 +48,26 @@ class betsob extends Controller
 
 	// editar
 	public function editar ($id){
-		$gorras = Betsob_gorra::find($id);
-    	return view('betsob.admin.admin-gorras.editar',compact('gorras'));
+		$gorras = Betsob_gorra::findOrFail($id);
+		$fecha = Betsob_gorra::select('updated_at');
+    	return view('betsob.admin.admin-gorras.gorras_editar',compact('gorras', 'fecha'));
 
 	}
+	public function update(Request $request, $id){
+		$gorrasUpdate = Betsob_gorra::findOrFail($id);
+		$gorrasUpdate-> talle = $request->talle;
+		$gorrasUpdate-> precio = $request->precio;
+		$gorrasUpdate-> reversible = $request->reversible;
+		$gorrasUpdate->save();
+		return back()->with('mensaje', 'Gorra actualizada');
+	}
 
+	// Eliminar
+	public function eliminar($id){
+		$gorraEliminar = Betsob_gorra::findOrFail($id);
+		$gorraEliminar->delete();
+		return back()->with('mensaje', 'Gorra Eliminada');
+	}
+	
 
 }

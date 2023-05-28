@@ -22,7 +22,9 @@ Route::get('/gorras-soldadores', [betsob::class, 'gorras'])->name('gorras');
 Route::get('/cofias-soldadores', [betsob::class, 'cofias'])->name('cofias');
 Route::get('/formulario-betsob', [betsob::class, 'formulario'])->name('formulario-betsob');
 Route::post('/formulario-betsob', [betsob::class, 'store'])->name('gorra.cargar_gorra');
-Route::get('/editar-gorra-crud/{id}', [betsob::class, 'editar'])->name('gorra.editar');
+Route::get('/editar-gorra/{id}', [betsob::class, 'editar'])->name('gorra.editar');
+Route::put('/editar-gorra/{id}', [betsob::class, 'update'])->name('gorra.actualizar');
+Route::delete('/eliminar-gorra/{id}', [betsob::class, 'eliminar'])->name('gorra.eliminar');
 /* Crear gorra --> Route::get('/crear', [betsob::class, 'crear_gorra'])->name('gorras.crear');Route::put('/store', [betsob::class, 'crear_gorra'])->name('gorras.store');*/
 
 // V&C Eventos y Nails
