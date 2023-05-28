@@ -61,69 +61,46 @@
 			
 					<div class="container section-principal d-flex" style="justify-content: space-between">
 				
-						<h1>Editar Gorra: {{ $gorras->id }}</h1>
-						<form class="g-3 align-items-center my-3 ml-4 p-3 col-4" id="crear-gorra-form" action="{{ route('gorra.cargar_gorra') }}"  enctype="multipart/form-data" method="POST">
-							@csrf
-							<h2 style="text-align: center; font-family:sans-serif">Agregar una gorra</h2>
-							<div class="col-12">
-								<label class="visually-hidden" for="inlineFormInputGroupUsername">Talle</label>
-								<div class="input-group">
-									<input type="text" class="form-control" name="talle" id="inlineFormInputGroupUsername" placeholder="Inserte talle (34, 35, 36, 37)">
+						<form action="" class="my-3" style="border: 1px solid rgb(0,0,0, 0.2); width: 410px;">
+							<h1 style="text-align: center">Editar Gorra: {{ $gorras->id }}</h1>
+							<div class="container-fluid d-flex justify-content-center" style="height: 250px; width:250px: display:flex; justify-content: center; box-shadow: 0px 0px 1px #000; background:#fff">
+
+									
+								<img src="../{{ $gorras->gorra }}" style=" ">
+
+
+							</div>
+							<div class="row p-3" style="align-items: center; justify-content: space-between">
+								<div class="left ml-4">
+									<label for="">Talle</label><br>
+									<input type="text"value="{{ $gorras->talle }}"><br>
+									<label for="">Precio</label><br>
+									<input type="text"value="{{ $gorras->precio }}"><br>
+									<label for="">Reversible</label><br>
+
+									@if ($gorras->reversible == true)
+										<select name="" id="">
+											<option value="1" selected>Sí (Asignado)</option>
+											<option value="0">No</option>
+										</select>
+									@else
+										<select name="" id="">
+											
+											<option value="1" >Sí</option>
+											<option value="0" selected>No (Asignado)</option>
+										</select>
+									@endif
+
 								</div>
-							</div>
-							<div class="col-12">
-								<label class="visually-hidden" for="inlineFormInputGroupUsername">Precio</label>
-								<div class="input-group">
-									<input type="text" class="form-control" name="precio" id="inlineFormInputGroupUsername" placeholder="Inserte precio (2000 example)">
-								</div>
-							</div>
-							<div class="col-12 mt-2" style="display: flex; justify-content: space-between; align-items:center;">
-								<label for="formFileMultiple" class="form-label">Cargar imagen</label>
-			
-								<label class="custom-file-upload">
-									<input type="file" class="btn btn-secondary" name="gorra" onchange="previewImage(event, '#imgPreview')" >
-									Subir archivo
-								</label>
-								
-							</div>
-							<div class="d-flex mt-2 col-12" style="justify-content: between">
-			
-								<div class="col-sm-6">
-					
-									<span>REVERSIBLE</span>
-					
-									<div class="form-check">
-										<input class="form-check-input" type="radio" name="reversible" id="gridRadios1" value="1" checked>
-										<label class="form-check-label" for="gridRadios1">
-											Sí
-										</label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="radio" name="reversible" id="gridRadios2" value="0">
-										<label class="form-check-label" for="gridRadios2">
-											No
-										</label>
-									</div>
-									<div class="mt-3">
-									  <input type="submit" value="Cargar" class="btn btn-primary">
+								<div class="mr-4">
+									<div style="display:grid;">
+										<button class="btn btn-success mb-1">Guardar</button>
+										<button class="btn btn-secondary">Regresar</button>
 									</div>
 								</div>
-								
-								<div class="container-fluid d-flex justify-content-center" style="height: 130px; width:130px: display:flex; justify-content: center; box-shadow: 0px 0px 1px #000; background:#fff">
-									<a href="#" type="button" >
-										
-										<img id="imgPreview" style="height: 100%; width:100%;">
-									</a>
-								</div>
-			
-			
 							</div>
+
 						</form>
-						
-						talle
-						precio
-						gorra
-						reversible
 				
 						
 					</div>
