@@ -20,22 +20,27 @@
 				@csrf
 				<h2 style="text-align: center; font-family:sans-serif">Agregar una gorra</h2>
 				<div class="col-12">
-					<label class="visually-hidden" for="inlineFormInputGroupUsername">Talle</label>
-					<div class="input-group">
-						<input type="text" class="form-control" name="talle" id="inlineFormInputGroupUsername" placeholder="Inserte talle (34, 35, 36, 37)">
+					<label class="visually-hidden" for="inlineFormInputGroupUsername">Talle del producto</label>
+					<div class="d-flex">
+						<div class="input-group">
+							<input type="text" class="form-control" name="talle1" id="inlineFormInputGroupUsername" placeholder="Inserte Talle n°1" required>
+						</div>
+						<div class="input-group">
+							<input type="text" class="form-control ml-1" name="talle2" id="inlineFormInputGroupUsername" placeholder="Inserte Talle n°2">
+						</div>
 					</div>
 				</div>
 				<div class="col-12">
-					<label class="visually-hidden" for="inlineFormInputGroupUsername">Precio</label>
+					<label class="visually-hidden" for="inlineFormInputGroupUsername">Precio del producto</label>
 					<div class="input-group">
-						<input type="text" class="form-control" name="precio" id="inlineFormInputGroupUsername" placeholder="Inserte precio (2000 example)">
+						<input type="text" class="form-control" name="precio" id="inlineFormInputGroupUsername" placeholder="Inserte precio (2000 ejemplo)" required>
 					</div>
 				</div>
 				<div class="col-12 mt-2" style="display: flex; justify-content: space-between; align-items:center;">
 					<label for="formFileMultiple" class="form-label">Cargar imagen</label>
 
 					<label class="custom-file-upload">
-						<input type="file" class="btn btn-secondary" name="gorra" onchange="previewImage(event, '#imgPreview')" >
+						<input type="file" class="btn btn-secondary" name="gorra" onchange="previewImage(event, '#imgPreview')" required>
 						Subir archivo
 					</label>
 					
@@ -88,7 +93,11 @@
 						@foreach($gorras as $item)
 							<tr>
 								<th>{{ $item->id}}</th>
-								<td>Talle#{{ $item->talle}}</td>
+								@if($item->talle2 > 0 )
+									<td>Talle#{{ $item->talle1}}-{{ $item->talle2}}</td>
+								@else
+									<td>Talle#{{ $item->talle1}}</td>
+								@endif
 								<td>${{ $item->precio}}</td>
 								<td><img src="{{ $item->gorra}}" alt="" width="50" height="50"></td>
 								@if($item->reversible == true)

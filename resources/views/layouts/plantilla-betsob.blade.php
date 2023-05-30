@@ -36,7 +36,7 @@
 		
 		<main class="contenedor">
 			<!-- Header Portafolio Urbine01 -->
-			<x-header/>
+			{{-- <x-header/> --}}
 
 			<!-- Header Betsob -->
 			<x-header-betsob/>

@@ -36,7 +36,7 @@
 		
 		<main class="contenedor">
 			<!-- Header Portafolio Urbine01 -->
-			<x-header/>
+			{{-- <x-header/> --}}
 
 			<!-- Header Betsob -->
 			<x-header-betsob/>
@@ -70,25 +70,36 @@
 								<img src="../{{ $gorras->gorra }}" style=" ">
 							</div>
 							<div class="row p-3" style="align-items: center; justify-content: space-between">
-								<div class="left ml-4">
-									<label for="">Talle</label><br>
-									<input type="number" class="form-control" name="talle" value="{{ $gorras->talle }}">
+								<div class="left ml-4 col-7">
+									<div class="d-flex" >
+										<div>
+											<label for="">Talle: 1</label><br>
+											<input type="number" class="form-control" name="talle1" value="{{ $gorras->talle1 }}">
+										</div>
+										
+										<div class="ml-1">
+											<label for="">Talle: 2</label><br>
+											<input type="number" class="form-control" name="talle2" value="{{ $gorras->talle2 }}">
+										</div>
+									</div>
+									
 									<label for="">Precio</label><br>
 									<input type="number" class="form-control" name="precio" value="{{ $gorras->precio }}">
-									<label for="">Reversible</label><br>
-			
-									@if ($gorras->reversible == true)
-										<select name="reversible" id="">
-											<option value="1" selected>Sí (Asignado)</option>
-											<option value="0">No</option>
-										</select>
-									@else
-										<select name="reversible" id="">
-											
-											<option value="1" >Sí</option>
-											<option value="0" selected>No (Asignado)</option>
-										</select>
-									@endif
+
+									<div class="mt-3">
+										@if ($gorras->reversible == true)
+											<select name="reversible" id="">
+												<option value="1" selected>Reversible (Asignado)</option>
+												<option value="0">No Reversible</option>
+											</select>
+										@else
+											<select name="reversible" id="">
+												
+												<option value="1" >Reversible</option>
+												<option value="0" selected>No Reversible (Asignado)</option>
+											</select>
+										@endif
+									</div>
 			
 								</div>
 								<div class="mr-4">
@@ -117,7 +128,11 @@
 								<tbody>
 									<tr>
 										<th>{{ $gorras->id}}</th>
-										<td>Talle#{{ $gorras->talle}}</td>
+										@if($gorras->talle2 > 0 )
+											<td>Talle#{{ $gorras->talle1}}-{{ $gorras->talle2}}</td>
+										@else
+											<td>Talle#{{ $gorras->talle1}}</td>
+										@endif
 										<td>${{ $gorras->precio}}</td>
 										<td><img src="../{{ $gorras->gorra}}" alt="" width="50" height="50"></td>
 										@if($gorras->reversible == true)

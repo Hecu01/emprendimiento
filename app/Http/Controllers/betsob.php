@@ -39,7 +39,8 @@ class betsob extends Controller
 			$uploadSuccess = $request->file('gorra')->move($carpetaDestino, $filename);
 			$gorraNueva->gorra = $carpetaDestino . $filename;
 		}
-        $gorraNueva->talle = $request->talle;
+        $gorraNueva->talle1 = $request->talle1;
+        $gorraNueva->talle2 = $request->talle2;
         $gorraNueva->precio = $request->precio;
         $gorraNueva->reversible = $request->reversible;
         $gorraNueva->save();
@@ -49,13 +50,15 @@ class betsob extends Controller
 	// editar
 	public function editar ($id){
 		$gorras = Betsob_gorra::findOrFail($id);
+		
 		$fecha = Betsob_gorra::select('updated_at');
     	return view('betsob.admin.admin-gorras.gorras_editar',compact('gorras', 'fecha'));
 
 	}
 	public function update(Request $request, $id){
 		$gorrasUpdate = Betsob_gorra::findOrFail($id);
-		$gorrasUpdate-> talle = $request->talle;
+		$gorrasUpdate-> talle1 = $request->talle1;
+		$gorrasUpdate-> talle2 = $request->talle2;
 		$gorrasUpdate-> precio = $request->precio;
 		$gorrasUpdate-> reversible = $request->reversible;
 		$gorrasUpdate->save();

@@ -13,78 +13,87 @@
 				</div>
 				<section class="row justify-content-center col-12 articulos">
 
-					@foreach($gorras as $item)
-						<article>
-							<h1>Talle#{{$item->talle}}</h1>	
-							<div class="contenedor-imagen-article" >
-					
-								<img src="{{ $item->gorra}}" alt="Gorra" class="imagen" data-bs-toggle="modal"  data-bs-target="#myModal" type="button">
-								@if($item->reversible == true)
-									<span class="reversible rev-gorra">
-										REVERSIBLE
-									</span>
+			
+					@if(count($gorras) > 0)
+						@foreach($gorras as $item)
+							
+							<article>
+								@if($item->talle2 > 0 )
+									<h1>Talle#{{ $item->talle1}}-{{ $item->talle2}}</h1>
+								@else
+									<h1>Talle#{{ $item->talle1}}</h1>
 								@endif
-								<span class="reversible reversible2 gorra">
-									${{$item->precio}} AR
-								</span>
-							</div>				
-							<div class="detalles">
-								<button class="btn btn-success">
-									Contactar <i class="fab fa-whatsapp"></i>
-								</button>
-								<!-- Button to Open the Modal -->
-								<button type="button" class="btn btn-primary ml-1" data-bs-toggle="modal" data-bs-target="#myModal">
-									<i class="fa-solid fa-magnifying-glass-plus"></i>
-								</button>
+								<div class="contenedor-imagen-article" >
+						
+									<img src="{{ $item->gorra}}" alt="Gorra" class="imagen" data-bs-toggle="modal"  data-bs-target="#myModal" type="button">
+									@if($item->reversible == true)
+										<span class="reversible rev-gorra">
+											REVERSIBLE
+										</span>
+									@endif
+									<span class="reversible reversible2 gorra">
+										${{$item->precio}} AR
+									</span>
+								</div>				
+								<div class="detalles">
+									<button class="btn btn-success">
+										Contactar <i class="fab fa-whatsapp"></i>
+									</button>
+									<!-- Button to Open the Modal -->
+									<button type="button" class="btn btn-primary ml-1" data-bs-toggle="modal" data-bs-target="#modal{{$item->id}}">
+										<i class="fa-solid fa-magnifying-glass-plus"></i>
+									</button>
 
-							</div>
-						</article>
-					@endforeach()
-
+								</div>
+							</article>
+							
+						@endforeach()
+					@else
+						<p style="height: 600px">No hay nada que mostrar</p>
+					@endif
+			
 				</section>
 			</div>
 		</div>
 
 	</section>
 	
-
-	<!-- The Modal -->
-	<div class="modal" id="myModal2" >
-		<div class="modal-dialog" >
-			<div class="modal-content">
+	
+@foreach($gorras as $item)
+	
 		
-				<!-- Modal Header -->
-				<div class="modal-header">
-				<h4 class="modal-title">Talle#34-35</h4>
-				</div>
-		
-				<!-- Modal body -->
-				<div class="modal-body">
-					<div>
-						<img src="img/betsob/gorras/articulo2.jpg" alt="" style="display:block;margin: auto; width:300px">
+		<!-- The Modal -->
+		<div class="modal" id="modal{{$item->id}}" >
+			<div class="modal-dialog" >
+				<div class="modal-content">
+			
+					<!-- Modal Header -->
+					<div class="modal-header">
+					<h4 class="modal-title">Talle#{{ $item->talle}}</h4>
 					</div>
-				</div>
-		
-				<!-- Modal footer -->
-				<div class="modal-footer d-flex justify-content-center">
+			
+					<!-- Modal body -->
+					<div class="modal-body">
+						<div>
+							<img src="{{ $item->gorra }}" alt="" style="display:block;margin: auto; width:300px">
+						</div>
+					</div>
+			
+					<!-- Modal footer -->
+					<div class="modal-footer d-flex justify-content-center">
+						
+						<span class="reversible reversible2 gorra">
+							${{ $item->precio }} AR
+						</span>
+						<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
 					
-					<span class="reversible rev-gorra">
-						REVERSIBLE
-					</span>
-					<span class="reversible oferta">
-						OFERTA <br>
-						<b>$2500</b>
-					</span>
-					<span class="reversible reversible2 gorra">
-						$1625 AR
-					</span>
-					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-				
+					</div>
+			
 				</div>
-		
 			</div>
 		</div>
-	</div>
-								
-
+	
+@endforeach()
+	
 @endsection
+

@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('betsob_gorras', function (Blueprint $table) {
             $table->id();
-            $table->integer('talle');
+            $table->integer('talle1');
+            $table->integer('talle2')->nullable();
             $table->integer('precio');
             $table->boolean('reversible');
             $table->text('gorra');
