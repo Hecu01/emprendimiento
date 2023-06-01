@@ -24,8 +24,17 @@
 									<h1>Talle#{{ $item->talle1}}</h1>
 								@endif
 								<div class="contenedor-imagen-article" >
-						
-									<img src="{{ $item->gorra}}" alt="Gorra" class="imagen" data-bs-toggle="modal"  data-bs-target="#myModal" type="button">
+									
+									<style>
+										img{
+											transition: 0.5s all;
+										}
+										img:hover{
+											transition: 0.5s all;
+											box-shadow: 0px 0px 3px #000;
+										}
+									</style>
+									<img src="{{ $item->gorra}}" alt="Gorra" class="imagen" data-bs-toggle="modal" data-bs-target="#modal{{ $item->id }}" type="button">
 									@if($item->reversible == true)
 										<span class="reversible rev-gorra">
 											REVERSIBLE
@@ -46,10 +55,10 @@
 
 								</div>
 							</article>
-							
+
 						@endforeach()
 					@else
-						<p style="height: 600px">No hay nada que mostrar</p>
+						<p style="height: 600px">No hay nada que mostrar.</p>
 					@endif
 			
 				</section>

@@ -20,10 +20,7 @@
 							<span class="reversible rev-gorra">
 								REVERSIBLE
 							</span>
-							<span class="reversible oferta-cofia">
-								15% OFF <br>
-								<b>$2800</b>
-							</span>
+
 							<span class="reversible reversible2 cofia">
 								$2380 AR
 							</span>
@@ -60,10 +57,7 @@
 						<div class="contenedor-imagen-article">
 							<img src="img/betsob/cofias/articulo3-cofia.jpg" alt="Gorra" class="imagen">
 
-							<span class="reversible oferta-cofia">
-								15% OFF <br>
-								<b>$2800</b>
-							</span>
+
 							<span class="reversible reversible2 cofia">
 								$2380 AR
 							</span>
@@ -98,10 +92,7 @@
 							<span class="reversible rev-gorra">
 								REVERSIBLE
 							</span>
-							<span class="reversible oferta-cofia">
-								15% OFF <br>
-								<b>$2800</b>
-							</span>
+
 							<span class="reversible reversible2 cofia">
 								$2380 AR
 							</span>

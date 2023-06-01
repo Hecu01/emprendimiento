@@ -1,14 +1,17 @@
 @extends('layouts.plantilla-betsob')
 @section('section-principal-betsob')
+
 	<div class="contenedor d-flex admin-1">
 
-		<aside class="bg-dark col-2" >
-			<h4  class="mt-2">AdminUrbine01</h4>
-			<hr>
-			<nav>
+		<aside class="col-2" id="aside-form-gorras">
+			<h4 class="mt-2">@AdminUrbine01</h4>
+			
+			<nav class="navegacion-aside">
 				<ul>
 					<li><a href="{{ route('formulario-betsob') }}">Admin</a></li>
+
 					<li><a href="#" onclick="alert('Aún no funciona.')">Crear Gorra</a></li>
+
 					<li><a href="#" onclick="alert('Aún no funciona.')">Crear Cofia</a></li>
 				</ul>
 			</nav>
@@ -78,6 +81,7 @@
 
 				</div>
 			</form>
+
 			<div class="div">
 				<table class="table table-striped table-dark  mt-3" style="width:650px">
 					<thead>
@@ -109,7 +113,7 @@
 									<a href="#" class="btn btn-dark "title="Ver más">
 										<i class="fa-sharp fa-solid fa-eye"></i>
 									</a>									
-									<a href="{{ route('gorra.editar', $item->id) }}" class="btn btn-success "title="Editar">
+									<a href="{{ route('gorra.editar', $item->id) }}" class="btn" style="color: rgb(255,255,255);background: rgb(166, 0, 255)" title="Editar">
 										<i class="fa-solid fa-pen-to-square"></i>
 									</a>
 									<form action="{{ route('gorra.eliminar', $item->id) }}" class="d-inline" method="POST">
