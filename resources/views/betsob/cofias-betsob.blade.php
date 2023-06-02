@@ -1,5 +1,11 @@
 @extends('layouts.plantilla-betsob')
 @section('section-principal-betsob')    	
+	
+	@guest
+		<x-header-betsob/> 
+	@else
+		<x-header-betsob-admin/>
+	@endguest
 	<div class="divisor-ciudad">
 		<p class="pie_de_pagina" >San Nicolás de los Arroyos, Buenos Aires.</p>
 	</div>

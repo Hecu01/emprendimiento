@@ -19,11 +19,17 @@ class betsob extends Controller
     	$title = 'Betsob - Cofias para Soldadores';
     	return view('betsob.cofias-betsob',compact('title'));
     }
+    public function tabla_gorras(){
+		
+		$gorras = Betsob_gorra::paginate(4);
+    	$title = 'Betsob - Tabla de gorras';
+    	return view('betsob.admin.tabla-gorras',compact('title', 'gorras'));
+
+	}
 
 	// Admin
 	public function formulario(){
 		$gorras = Betsob_gorra::paginate(4);
-		
     	$title = 'Betsob - Crud';
     	return view('betsob.admin.formulario-betsob',compact('title', 'gorras'));
     }
@@ -43,6 +49,8 @@ class betsob extends Controller
         $gorraNueva->talle2 = $request->talle2;
         $gorraNueva->precio = $request->precio;
         $gorraNueva->reversible = $request->reversible;
+        $gorraNueva->autor = $request->autor;
+        $gorraNueva->cantidad = $request->cantidad;
         $gorraNueva->save();
         return back();
    	}
@@ -61,6 +69,8 @@ class betsob extends Controller
 		$gorrasUpdate-> talle2 = $request->talle2;
 		$gorrasUpdate-> precio = $request->precio;
 		$gorrasUpdate-> reversible = $request->reversible;
+		$gorrasUpdate-> autor = $request->autor;
+		$gorrasUpdate-> cantidad = $request->cantidad;
 		$gorrasUpdate->save();
 		return back()->with('mensaje', 'Gorra actualizada');
 	}
@@ -70,7 +80,15 @@ class betsob extends Controller
 		$gorraEliminar = Betsob_gorra::findOrFail($id);
 		$gorraEliminar->delete();
 		return back()->with('mensaje', 'Gorra Eliminada');
+	}	
+	public function una_gorra_mas(Request $request, $id){
+		$sumar_gorra = 1;
+		$gorrasUpdate = Betsob_gorra::findOrFail($id);
+		$gorrasUpdate-> cantidad =+ $request->sumar_gorra;
+		$gorrasUpdate->save();
+		return back()->with('mensaje', 'Gorra agregada');
 	}
+	
 	
 
 }

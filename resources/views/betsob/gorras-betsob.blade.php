@@ -1,5 +1,16 @@
 @extends('layouts.plantilla-betsob')
 @section('section-principal-betsob')
+	
+	@guest
+		<x-header-betsob/> 
+
+
+	@else
+
+		<x-header-betsob-admin/>
+
+	@endguest
+
 	<div class="divisor-ciudad">
 		<p class="pie_de_pagina pl-2 pr-2" >San Nicolás de los Arroyos, Buenos Aires.</p>
 	</div>
@@ -43,7 +54,14 @@
 									<span class="reversible reversible2 gorra">
 										${{$item->precio}} AR
 									</span>
-								</div>				
+								</div>		
+
+									@guest
+									
+									@else
+										<p style="text-align: center; color:grey; font-size: 0.8em">Autor/a: {{$item->autor }}</p>
+									@endguest
+		
 								<div class="detalles">
 									<button class="btn btn-success">
 										Contactar <i class="fab fa-whatsapp"></i>

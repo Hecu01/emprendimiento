@@ -1,42 +1,29 @@
 @extends('layouts.plantilla-betsob')
 @section('section-principal-betsob')
 
+	<x-header-betsob-admin/>
 	<div class="contenedor d-flex admin-1">
 
-		<aside class="col-2" id="aside-form-gorras">
-			<h4 class="mt-2">@AdminUrbine01</h4>
-			
-			<nav class="navegacion-aside">
-				<ul>
-					<li><a href="{{ route('formulario-betsob') }}">Admin</a></li>
-
-					<li><a href="#" onclick="alert('Aún no funciona.')">Crear Gorra</a></li>
-
-					<li><a href="#" onclick="alert('Aún no funciona.')">Crear Cofia</a></li>
-				</ul>
-			</nav>
-		</aside>
-
-		<div class="container section-principal d-flex py-5">
+		<div class="container section-principal d-flex py-5 justify-content-center">
 	
-			<form class="g-3 align-items-center my-3 ml-4 p-3 col-4" id="crear-gorra-form" action="{{ route('gorra.cargar_gorra') }}"  enctype="multipart/form-data" method="POST" style="background: #fff; box-shadow: 0px 0px 3px #000">
+			<form class="g-3 align-items-center my-3 mr-3 p-3 col-4" id="crear-gorra-form" action="{{ route('gorra.cargar_gorra') }}"  enctype="multipart/form-data" method="POST" style="background: #fff; box-shadow: 0px 0px 3px #000">
 				@csrf
 				<h2 style="text-align: center; font-family:sans-serif">Agregar una gorra</h2>
 				<div class="col-12">
 					<label class="visually-hidden" for="inlineFormInputGroupUsername">Talle del producto</label>
 					<div class="d-flex">
 						<div class="input-group">
-							<input type="text" class="form-control" name="talle1" id="inlineFormInputGroupUsername" placeholder="Inserte Talle n°1" required>
+							<input type="number" class="form-control" name="talle1" id="inlineFormInputGroupUsername" placeholder="Inserte Talle n°1" required>
 						</div>
 						<div class="input-group">
-							<input type="text" class="form-control ml-1" name="talle2" id="inlineFormInputGroupUsername" placeholder="Inserte Talle n°2">
+							<input type="number" class="form-control ml-1" name="talle2" id="inlineFormInputGroupUsername" placeholder="Inserte Talle n°2">
 						</div>
 					</div>
 				</div>
 				<div class="col-12">
 					<label class="visually-hidden" for="inlineFormInputGroupUsername">Precio del producto</label>
 					<div class="input-group">
-						<input type="text" class="form-control" name="precio" id="inlineFormInputGroupUsername" placeholder="Inserte precio (2000 ejemplo)" required>
+						<input type="number" class="form-control" name="precio" id="inlineFormInputGroupUsername" placeholder="Inserte precio (2000 ejemplo)" required>
 					</div>
 				</div>
 				<div class="col-12 mt-2" style="display: flex; justify-content: space-between; align-items:center;">
@@ -52,20 +39,22 @@
 
 					<div class="col-sm-6">
 		
-						<span>REVERSIBLE</span>
-		
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="reversible" id="gridRadios1" value="1" checked>
-							<label class="form-check-label" for="gridRadios1">
-								Sí
-							</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="reversible" id="gridRadios2" value="0">
-							<label class="form-check-label" for="gridRadios2">
-								No
-							</label>
-						</div>
+						<select name="reversible" id="">
+							<option value="1"selected>Reversible</option>
+							<option value="0">No reversible</option>
+
+						</select>
+						<select name="autor" id="" class="my-1 ">
+							<option value="default" selected hidden>Autor</option>
+							<option value="Mariana">Mariana</option>
+							<option value="Gabriela">Gabriela</option>
+							<option value="Bety">Bety</option>
+							<option value="Otro">Otro</option>
+
+						</select><br>
+
+
+						<input type="number" name="cantidad" class=" form-control col-8 px-1 d-inline" placeholder="cantidad">
 						<div class="mt-3">
 						  <input type="submit" value="Cargar" class="btn btn-primary">
 						</div>
@@ -83,24 +72,23 @@
 			</form>
 
 			<div class="div">
-				<table class="table table-striped table-dark  mt-3" style="width:650px">
+				<table class="table table-striped table-dark  mt-3 ml-3" >
 					<thead>
 	
-						<th>ID</th>
 						<th>Talle</th>
 						<th>Precio</th>
-						<th>ImgGorra</th>
+						<th>Img</th>
 						<th>Reversible</th>
+						<th>Cant</th>
 						
 					</thead>
 					<tbody>
 						@foreach($gorras as $item)
 							<tr>
-								<th>{{ $item->id}}</th>
 								@if($item->talle2 > 0 )
-									<td>Talle#{{ $item->talle1}}-{{ $item->talle2}}</td>
+									<td>{{ $item->talle1}}-{{ $item->talle2}}</td>
 								@else
-									<td>Talle#{{ $item->talle1}}</td>
+									<td>{{ $item->talle1}}</td>
 								@endif
 								<td>${{ $item->precio}}</td>
 								<td><img src="{{ $item->gorra}}" alt="" width="50" height="50"></td>
@@ -109,17 +97,21 @@
 									@else 
 									<td>No reversible</td>
 								@endif
+								<td>{{$item->cantidad}}</td>
 								<td>
-									<a href="#" class="btn btn-dark "title="Ver más">
+									<a href="#" class="btn btn-secondary"title="Ver más">
 										<i class="fa-sharp fa-solid fa-eye"></i>
 									</a>									
-									<a href="{{ route('gorra.editar', $item->id) }}" class="btn" style="color: rgb(255,255,255);background: rgb(166, 0, 255)" title="Editar">
+									<a href="{{ route('gorra.editar', $item->id) }}" class="btn btn-success"  title="Editar">
+										
 										<i class="fa-solid fa-pen-to-square"></i>
 									</a>
 									<form action="{{ route('gorra.eliminar', $item->id) }}" class="d-inline" method="POST">
 										@method('DELETE')
 										@csrf
-										<button type="submit" class="btn btn-danger "title="Eliminar">
+
+										<button type="submit" class="btn btn-danger"title="Eliminar">
+											
 											<i class="fa-solid fa-trash"></i>
 										</button>
 									</form>
@@ -178,4 +170,9 @@
 	svg{
 		height: auto;
 	}
+	input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none; 
+	margin: 0; 
+	}
+
 </style>

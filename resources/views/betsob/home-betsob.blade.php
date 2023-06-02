@@ -1,7 +1,11 @@
 @extends('layouts.plantilla-betsob')
-
-
-@section('section-principal-betsob')
+@section('section-principal-betsob')	
+	
+	@guest
+		<x-header-betsob/> 
+	@else
+		<x-header-betsob-admin/>
+	@endguest
 
     <!-- Section -->		
 	<section class="section-1-main">

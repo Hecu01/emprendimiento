@@ -39,28 +39,16 @@
 			{{-- <x-header/> --}}
 
 			<!-- Header Betsob -->
-			<x-header-betsob/>
+			<x-header-betsob-admin/>
 			
 			<!-- Seccion Principal -->
 			<div class="principal">
 				<div class="contenedor d-flex admin-1">
 
-					<aside class="bg-dark col-2" >
-						<h4  class="mt-2">AdminUrbine01</h4>
-						<hr>
-						<nav>
-							<ul>
-								<li><a href="{{ route('formulario-betsob') }}">Admin</a></li>
-								<li><a href="#" onclick="alert('Aún no funciona.')">Crear Gorra</a></li>
-								<li><a href="#" onclick="alert('Aún no funciona.')">Crear Cofia</a></li>
-							</ul>
-						</nav>
-					</aside>
 			
-					<div class="container section-principal d-flex" 
-					style="justify-content: space-between; background: url('../img/betsob/fondo_admin.jpg') no-repeat center/cover">
+					<div class="container-fluid section-principal d-flex  justify-content-center">
 			
-						<form method="POST" action="{{ route('gorra.actualizar', $gorras->id) }}" class="my-3" style="background: #fff;box-shadow: 0px 0px 3px #000;border: 1px solid rgb(0,0,0, 0.2); width: 410px;">
+						<form method="POST" action="{{ route('gorra.actualizar', $gorras->id) }}" class="my-3 mr-3" style="background: #fff;box-shadow: 0px 0px 3px #000;border: 1px solid rgb(0,0,0, 0.2); width: 410px;">
 							<h1 style="text-align: center">Editar Gorra: {{ $gorras->id }}</h1>
 							
 							@method("PUT")
@@ -82,23 +70,31 @@
 											<input type="number" class="form-control" name="talle2" value="{{ $gorras->talle2 }}">
 										</div>
 									</div>
-									
-									<label for="">Precio</label><br>
-									<input type="number" class="form-control" name="precio" value="{{ $gorras->precio }}">
+									<div class="d-flex mt-1">
+										<div class="">
+											<label for="">Precio</label><br>
+											<input type="number" class="form-control " name="precio" value="{{ $gorras->precio }}">
+										</div>
+										<div class="ml-1">
+											<label for="">Cantidad</label><br>
+											<input type="number" class="form-control " name="cantidad" value="{{ $gorras->cantidad }}">
+										</div>
+									</div>
 
-									<div class="mt-3">
-										@if ($gorras->reversible == true)
-											<select name="reversible" id="">
-												<option value="1" selected>Reversible (Asignado)</option>
-												<option value="0">No Reversible</option>
-											</select>
-										@else
-											<select name="reversible" id="">
-												
-												<option value="1" >Reversible</option>
-												<option value="0" selected>No Reversible (Asignado)</option>
-											</select>
-										@endif
+									<div class="mt-2">
+										<select name="reversible" id="">
+											<option value="1">Reversible</option>
+											<option value="0">No Reversible</option>
+										</select>
+
+										<select name="autor" id="" class="my-1 ">
+											<option value="{{$gorras->autor}}" selected hidden>Autor: {{$gorras->autor}}</option>
+											<option value="Mariana">Mariana</option>
+											<option value="Gabriela">Gabriela</option>
+											<option value="Bety">Bety</option>
+											<option value="Otro">Otro</option>
+										</select>
+
 									</div>
 			
 								</div>
@@ -112,7 +108,7 @@
 			
 						</form>
 			
-						<div class="div">
+						<div class="div ml-3">
 							
 							<table class="table table-striped table-dark  mt-3" style="width:650px; box-shadow: 0px 0px 3px #000;">
 								<thead>
@@ -122,16 +118,18 @@
 									<th>Precio</th>
 									<th>ImgGorra</th>
 									<th>Reversible</th>
+									<th>Autor</th>
+									<th>Cant</th>
 									<th>Actualizado</th>
 									
 								</thead>
 								<tbody>
 									<tr>
-										<th>{{ $gorras->id}}</th>
+										<th >{{ $gorras->id}}</th>
 										@if($gorras->talle2 > 0 )
-											<td>Talle#{{ $gorras->talle1}}-{{ $gorras->talle2}}</td>
+											<td style="width:70px">{{ $gorras->talle1}}-{{ $gorras->talle2}}</td>
 										@else
-											<td>Talle#{{ $gorras->talle1}}</td>
+											<td>{{ $gorras->talle1}}</td>
 										@endif
 										<td>${{ $gorras->precio}}</td>
 										<td><img src="../{{ $gorras->gorra}}" alt="" width="50" height="50"></td>
@@ -140,6 +138,8 @@
 											@else 
 											<td>No reversible</td>
 										@endif
+										<td>{{ $gorras->autor}}</td>
+										<td>{{ $gorras->cantidad}}</td>
 										<td>{{ $gorras->updated_at}}</td>
 										
 									</tr>
@@ -176,3 +176,11 @@
 
 
 	
+<style>
+
+	input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button { 
+		-webkit-appearance: none; 
+		margin: 0; 
+	}
+
+</style>

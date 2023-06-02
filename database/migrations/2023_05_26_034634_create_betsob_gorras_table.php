@@ -17,6 +17,8 @@ return new class extends Migration
             $table->integer('talle2')->nullable();
             $table->integer('precio');
             $table->boolean('reversible');
+            $table->text('autor'); //nuevo
+            $table->integer('cantidad')->nullable(); //nuevo
             $table->text('gorra');
             $table->timestamps();
             $table->softDeletes();

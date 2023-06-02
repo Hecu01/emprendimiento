@@ -44,7 +44,8 @@ input[type="file"] {
     padding-bottom: 5px;
 }
 #aside-form-gorras{
-    background-color: rgb(0, 5, 73);
+    background-color: rgba(0, 5, 73, 0.549);
+    border-right: 1px solid #ffffff62;
 }
 .navegacion-aside ul li a{
     color: #fff;
