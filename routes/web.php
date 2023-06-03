@@ -21,17 +21,24 @@ Route::get('/perfectec', [myController::class, 'perfectec'])->name('albañil');
 // Routes - betsob
 
 Route::middleware(['auth'])->group(function(){
-    Route::get('/formulario-betsob', [betsob::class, 'formulario'])->name('formulario-betsob');
+    /* Gorras */
+    Route::get('/crear-gorra', [betsob::class, 'formulario_gorra'])->name('formulario-gorra-betsob');
+    Route::post('/crear-gorra', [betsob::class, 'store'])->name('gorra.cargar_gorra');
     Route::get('/tabla-gorras', [betsob::class, 'tabla_gorras'])->name('tabla-gorras-betsob');
     Route::put('/tabla-gorras', [betsob::class, 'una_gorra_mas'])->name('gorra.agregar.una.mas');
+    Route::get('/editar-gorra/{id}', [betsob::class, 'editar'])->name('gorra.editar');
+    Route::put('/editar-gorra/{id}', [betsob::class, 'update'])->name('gorra.actualizar');
+    Route::delete('/eliminar-gorra/{id}', [betsob::class, 'eliminar'])->name('gorra.eliminar');
+    Route::delete('/eliminar-gorra/{id}', [betsob::class, 'eliminar'])->name('gorra.eliminar');
+    
+    /* Gorras */
+    Route::get('/crear-cofia', [betsob::class, 'formulario_cofia'])->name('formulario-cofia-betsob');
+
 });
 Route::get('/betsob', [myController::class, 'betsob'])->name('betsob');
 Route::get('/gorras-soldadores', [betsob::class, 'gorras'])->name('gorras');
 Route::get('/cofias-soldadores', [betsob::class, 'cofias'])->name('cofias');
-Route::post('/formulario-betsob', [betsob::class, 'store'])->name('gorra.cargar_gorra');
-Route::get('/editar-gorra/{id}', [betsob::class, 'editar'])->name('gorra.editar');
-Route::put('/editar-gorra/{id}', [betsob::class, 'update'])->name('gorra.actualizar');
-Route::delete('/eliminar-gorra/{id}', [betsob::class, 'eliminar'])->name('gorra.eliminar');
+
 
 
 /* Crear gorra --> Route::get('/crear', [betsob::class, 'crear_gorra'])->name('gorras.crear');Route::put('/store', [betsob::class, 'crear_gorra'])->name('gorras.store');*/

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Betsob_gorra;
+use App\Models\Betsob_cofia;
 use App;
 
 class betsob extends Controller
@@ -28,10 +29,12 @@ class betsob extends Controller
 	}
 
 	// Admin
-	public function formulario(){
+
+	// Gorras
+	public function formulario_gorra(){
 		$gorras = Betsob_gorra::paginate(4);
-    	$title = 'Betsob - Crud';
-    	return view('betsob.admin.formulario-betsob',compact('title', 'gorras'));
+    	$title = 'Betsob - Gorras';
+    	return view('betsob.admin.gorras-crear',compact('title', 'gorras'));
     }
 
     // Crear gorra
@@ -88,7 +91,33 @@ class betsob extends Controller
 		$gorrasUpdate->save();
 		return back()->with('mensaje', 'Gorra agregada');
 	}
-	
-	
 
+	// Gorras
+	public function formulario_cofia(){
+		// $cofias = Betsob_cofia::paginate(4);
+		$title = 'Betsob - Cofias';
+		return view('betsob.admin.cofias-crear',compact('title'));
+	}
+	
+	
+	// Crear cofia
+	public function store_cofia(Request $request){
+
+		$cofiaNueva = new Betsob_cofia;
+		if($request->hasFile('cofia')){
+			$file = $request->file('cofia');
+			$carpetaDestino = 'img/betsob/cofias/';
+			$filename = time() . '-' . $file->getClientOriginalName();
+			$uploadSuccess = $request->file('cofia')->move($carpetaDestino, $filename);
+			$cofiaNueva->cofia = $carpetaDestino . $filename;
+		}
+		$cofiaNueva->talle1 = $request->talle1;
+		$cofiaNueva->talle2 = $request->talle2;
+		$cofiaNueva->precio = $request->precio;
+		$cofiaNueva->reversible = $request->reversible;
+		$cofiaNueva->autor = $request->autor;
+		$cofiaNueva->cantidad = $request->cantidad;
+		$cofiaNueva->save();
+		return back();
+	}
 }

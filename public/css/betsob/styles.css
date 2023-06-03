@@ -80,7 +80,7 @@ header nav a img:hover{
     position: relative;
 
 }
-.social_media ul li:hover{
+#nav-betsob ul li:hover{
     
     transition: all 0.1s;
     color: rgb(82, 186, 255);

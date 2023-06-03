@@ -26,24 +26,24 @@
 				</a>
 
 				<div class="dropdown-menu dropdown-menu-end bg-dark" style="color: white" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="{{ route('formulario-betsob') }}">
+					<a class="dropdown-item" href="{{ route('formulario-gorra-betsob') }}">
 						Crear Gorra
 					</a>
 					<a class="dropdown-item" href="{{ route('tabla-gorras-betsob') }}">
 						Tabla Gorras
 					</a>
 					<hr class="dropdown-divider">
-					<a class="dropdown-item" href="#">
+					<a class="dropdown-item" href="{{ route('formulario-cofia-betsob') }}">
 						Crear Cofia
 					</a>
 					<a class="dropdown-item" href="#">
 						Tabla Cofias
 					</a>
 					<hr class="dropdown-divider">
-					<a class="dropdown-item" href="{{ route('formulario-betsob') }}">
+					<a class="dropdown-item" href="#">
 						Registrar venta
 					</a>
-					<a class="dropdown-item" href="{{ route('formulario-betsob') }}">
+					<a class="dropdown-item" href="#">
 						Registrar Cliente
 					</a>
 
